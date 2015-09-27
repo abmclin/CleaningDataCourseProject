@@ -57,7 +57,7 @@
 #
 # How to Run:
 #
-#You can run the script in two ways. Invoke <b>R</b> on the command-line then execute
+# You can run the script in two ways. Invoke <b>R</b> on the command-line then execute
 # source("run_analysis.R") or invoke R --vanilla < run_analysis.R on the command-line.
 #
 # It will generate a text file called run_analysis_tidydataset which contains the subject,
