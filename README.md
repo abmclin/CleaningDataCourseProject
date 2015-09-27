@@ -1,6 +1,6 @@
 # Running the run_analysis.R script
 
-## Author:  Alexander McLin.
+## Author:  Alexander McLin
 
 This script was written for the Johns Hopkins Cleaning Data course taken in September 2015 on Coursera.org.
 
@@ -8,7 +8,7 @@ Version 1.0
 
 ## Disclaimer:
 
-This script is provided without any warranty to the extend permitted by applicable law. You use it at your own risk.
+This script is provided without any warranty to the extent permitted by applicable law. You use it at your own risk.
 
 ## Purpose:
 
