@@ -40,6 +40,8 @@ The dataset directory has a certain directory hierarchy which run_analysis.R is 
 
 ## How to Run:
 
-Simply invoke run_analyis.R using R - assuming it's in same directory as the UCI HAR Dataset, then it will generate a text file called run_analysis_tidydataset which contains the subject, activity identifiers, and the averages of the measured mean and standard deviation values.
+You can run the script in two ways. Invoke R on the command-line then execute <b>source("run_analysis.R")</b> or invoke <b>R --vanilla < run_analysis.R</b> on the command-line.
 
-You can run the script in two ways. Invoke R on the command-line then execute source("run_analysis.R") or invoke R --vanilla < run_analysis.R on the command-line.
+It will generate a text file called run_analysis_tidydataset which contains the subject, activity identifiers, and the averages of the measured mean and standard deviation values.
+
+Refer to the codebook.txt for details on the variables in the generated tidy dataset.
