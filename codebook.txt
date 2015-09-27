@@ -13,14 +13,18 @@ run_analysis then extracts all the mean and std measurements from the original d
 subject and activity, then averages all of them to produce the final value that is outputted in
 the tidy data set.
 
-The mean and std measurements can be classified into Time measurements and FrequencyDomain measurements where Fast Fourier Transform was taken of the sampled signals to produce the Frequency Domain measurements.
+The mean and std measurements can be classified into Time measurements and FrequencyDomain
+measurements where Fast Fourier Transform was taken of the sampled signals to produce the Frequency
+Domain measurements.
 
 Tri-axial and angular measurements were taken, so you will see X, Y, Z, and Gyro measurements in the
 data set.
 
-The Jerk and Magnitude values were also derived from the tri-axial and angular acceleration measurements.
+The Jerk and Magnitude values were also derived from the tri-axial and angular acceleration
+easurements.
 
-We also provide the angle measurements that have been calculated for between various mean measurements and other parameters in case they are of interest for additional analysis.
+We also provide the angle measurements that have been calculated for between various mean
+easurements and other parameters in case they are of interest for additional analysis.
 
 Please refer to features.txt in the UCI HAR data set for a list of the original measurements' names.
 
