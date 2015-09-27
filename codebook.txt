@@ -1,0 +1,741 @@
+Study Design:
+
+The run_analysis tidy data set is generated from UCI Machine Learning Repository's Human Activity
+Recognition Using Smartphones Data Set available at http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+The training and test data sets denoted X_train and X_test in the UCI data set were merged together
+with their features labels which are provided by the UCI repository.
+
+Further processing was done to associate each measurement with the subject and activity which
+generated the original measurements.
+
+run_analysis then extracts all the mean and std measurements from the original data set for each
+subject and activity, then averages all of them to produce the final value that is outputted in
+the tidy data set.
+
+Please refer to features.txt in the UCI HAR data set for a list of the original measurements' names.
+
+Code Book:
+
+The data set has the following columns, description and the range of possible values is provided for
+each column.
+
+"subject"
+        Integer index representing 30 volunteer subjects who performed the experiments in the
+        original data set.
+
+        Value range: 1 - 30
+
+"activity"
+        Name of activity that the subject performed when running the experiment.
+
+        Value range: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+
+"averageOf_Time_BodyAcc_mean_function_X"
+        average of tBodyAcc-mean()-X measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyAcc_mean_function_Y"
+        average of tBodyAcc-mean()-Y measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyAcc_mean_function_Z"
+        average of tBodyAcc-mean()-Z measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_GravityAcc_mean_function_X"
+        average of tGravityAcc-mean()-X measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_GravityAcc_mean_function_Y"
+        average of tGravityAcc-mean()-Y measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_GravityAcc_mean_function_Z"
+        average of tGravityAcc-mean()-Z measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyAccJerk_mean_function_X"
+        average of tBodyAccJerk-mean()-X measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyAccJerk_mean_function_Y"
+        average of tBodyAccJerk-mean()-Y measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyAccJerk_mean_function_Z"
+        average of tBodyAccJerk-mean()-Z measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyGyro_mean_function_X"
+        average of tBodyGyro-mean()-X measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyGyro_mean_function_Y"
+        average of tBodyGyro-mean()-Y measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyGyro_mean_function_Z"
+        average of tBodyGyro-mean()-Z measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyGyroJerk_mean_function_X"
+        average of tBodyGyroJerk-mean()-X measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyGyroJerk_mean_function_Y"
+        average of tBodyGyroJerk-mean()-Y measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyGyroJerk_mean_function_Z"
+        average of tBodyGyroJerk-mean()-Z measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyAccMag_mean_function"
+        average of tBodyAccMag-mean() measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_GravityAccMag_mean_function"
+        average of tGravityAccMag-mean() measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyAccJerkMag_mean_function"
+        average of tBodyAccJerkMag-mean() measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyGyroMag_mean_function"
+        average of tBodyGyroMag-mean() measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyGyroJerkMag_mean_function"
+        average of tBodyGyroJerkMag-mean() measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyAcc_mean_function_X"
+        average of t=fBodyAcc-mean()-X measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyAcc_mean_function_Y"
+        average of fBodyAcc-mean()-Y measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyAcc_mean_function_Z"
+        average of fBodyAcc-mean()-Z measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyAcc_meanFreq_function_X"
+        average of fBodyAcc-meanFreq()-X measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyAcc_meanFreq_function_Y"
+        average of fBodyAcc-meanFreq()-Y measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyAcc_meanFreq_function_Z"
+        average of fBodyAcc-meanFreq()-Z measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyAccJerk_mean_function_X"
+        average of fBodyAccJerk-mean()-X measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyAccJerk_mean_function_Y"
+        average of fBodyAccJerk-mean()-Y measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyAccJerk_mean_function_Z"
+        average of fBodyAccJerk-mean()-Z measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyAccJerk_meanFreq_function_X"
+        average of fBodyAccJerk-meanFreq()-X measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyAccJerk_meanFreq_function_Y"
+        average of fBodyAccJerk-meanFreq()-Y measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyAccJerk_meanFreq_function_Z"
+        average of fBodyAccJerk-meanFreq()-Z measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyGyro_mean_function_X"
+        average of fBodyGyro-mean()-X measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyGyro_mean_function_Y"
+        average of fBodyGyro-mean()-Y measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyGyro_mean_function_Z"
+        average of fBodyGyro-mean()-Z measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyGyro_meanFreq_function_X"
+        average of fBodyGyro-meanFreq()-X measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyGyro_meanFreq_function_Y"
+        average of fBodyGyro-meanFreq()-Y measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyGyro_meanFreq_function_Z"
+        average of fBodyGyro-meanFreq()-Z measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyAccMag_mean_function"
+        average of fBodyAccMag-mean() measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyAccMag_meanFreq_function"
+        average of fBodyAccMag-meanFreq() measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyBodyAccJerkMag_mean_function"
+        average of fBodyBodyAccJerkMag-mean() measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyBodyAccJerkMag_meanFreq_function"
+        average of fBodyBodyAccJerkMag-meanFreq() measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyBodyGyroMag_mean_function"
+        average of fBodyBodyGyroMag-mean() measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyBodyGyroMag_meanFreq_function"
+        average of fBodyBodyGyroMag-meanFreq() measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyBodyGyroJerkMag_mean_function"
+        average of fBodyBodyGyroJerkMag-mean() measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyBodyGyroJerkMag_meanFreq_function"
+        average of fBodyBodyGyroJerkMag-meanFreq() measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_angle(Time_BodyAccMean,gravity)"
+        average of angle(tBodyAccMean,gravity) measurements for each subject and activity from the
+        merged train and test data sets.
+
+        angle calculated between time body acceleration mean and gravity is included in this
+        data set because it is derived from the calculated mean values so thus may be of interest.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_angle(Time_BodyAccJerkMean),gravityMean)"
+        average of angle(tBodyAccJerkMean,gravityMean) measurements for each subject and activity
+        from the merged train and test data sets.
+
+        angle calculated between time body acceleration jerk mean and gravity is included in this
+        data set because it is derived from the calculated mean values so thus may be of interest.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_angle(Time_BodyGyroMean,gravityMean)"
+        average of angle(tBodyGyroMean,gravityMean) measurements for each subject and activity from
+        the merged train and test data sets.
+
+        angle calculated between time body gyro mean and gravity is included in this
+        data set because it is derived from the calculated mean values so thus may be of interest.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_angle(Time_BodyGyroJerkMean,gravityMean)"
+        average of angle(tBodyGyroJerkMean,gravityMean) measurements for each subject and activity
+        from the merged train and test data sets.
+
+        angle calculated between time body gyro jerk mean and gravity is included in this
+        data set because it is derived from the calculated mean values so thus may be of interest.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_angle(X,gravityMean)"
+        average of angle(X,gravityMean) measurements for each subject and activity from the
+        merged train and test data sets.
+
+        angle calculated between X and gravity mean is included in this
+        data set because it is derived from the calculated mean values so thus may be of interest.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_angle(Y,gravityMean)"
+        average of angle(Y,gravityMean) measurements for each subject and activity from the
+        merged train and test data sets.
+
+        angle calculated between Y and gravity mean is included in this
+        data set because it is derived from the calculated mean values so thus may be of interest.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_angle(Z,gravityMean)"
+        average of angle(Z,gravityMean) measurements for each subject and activity from the
+        merged train and test data sets.
+
+        angle calculated between Z and gravity mean is included in this
+        data set because it is derived from the calculated mean values so thus may be of interest.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyAcc_std_function_X"
+        average of tBodyAcc-std()-X measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyAcc_std_function_Y"
+        average of tBodyAcc-std()-Y measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyAcc_std_function_Z"
+        average of tBodyAcc-std()-Z measurements for each subject and activity from the
+        merged train and test data sets.
+
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_GravityAcc_std_function_X"
+        average of tGravityAcc-std()-X measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_GravityAcc_std_function_Y"
+        average of tGravityAcc-std()-Y measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_GravityAcc_std_function_Z"
+        average of tGravityAcc-std()-Z measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyAccJerk_std_function_X"
+        average of tBodyAccJerk-std()-X measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyAccJerk_std_function_Y"
+        average of tBodyAccJerk-std()-Y measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyAccJerk_std_function_Z"
+        average of tBodyAccJerk-std()-Z measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyGyro_std_function_X"
+        average of tBodyGyro-std()-X measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyGyro_std_function_Y"
+        average of tBodyGyro-std()-Y measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyGyro_std_function_Z"
+        average of tBodyGyro-std()-Z measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyGyroJerk_std_function_X"
+        average of tBodyGyroJerk-std()-X measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyGyroJerk_std_function_Y"
+        average of tBodyGyroJerk-std()-Y measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyGyroJerk_std_function_Z"
+        average of tBodyGyroJerk-std()-Z measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyAccMag_std_function"
+        average of tBodyAccMag-std() measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_GravityAccMag_std_function"
+        average of tGravityAccMag-std() measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyAccJerkMag_std_function"
+        average of tBodyAccJerkMag-std() measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyGyroMag_std_function"
+        average of tBodyGyroMag-std() measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_Time_BodyGyroJerkMag_std_function"
+        average of tBodyGyroJerkMag-std() measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyAcc_std_function_X"
+        average of fBodyAcc-std()-X measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyAcc_std_function_Y"
+        average of fBodyAcc-std()-Y measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyAcc_std_function_Z"
+        average of fBodyAcc-std()-Z measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyAccJerk_std_function_X"
+        average of fBodyAccJerk-std()-X measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyAccJerk_std_function_Y"
+        average of fBodyAccJerk-std()-Y measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyAccJerk_std_function_Z"
+        average of fBodyAccJerk-std()-Z measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyGyro_std_function_X"
+        average of fBodyGyro-std()-X measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyGyro_std_function_Y"
+        average of fBodyGyro-std()-Y measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyGyro_std_function_Z"
+        average of fBodyGyro-std()-Z measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyAccMag_std_function"
+        average of fBodyAccMag-std() measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyBodyAccJerkMag_std_function"
+        average of fBodyAccJerkMag-std() measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyBodyGyroMag_std_function"
+        average of fBodyBodyGyroMag-std() measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
+
+
+"averageOf_FrequencyDomain_BodyBodyGyroJerkMag_std_function"
+        average of fBodyBodyGyroJerkMag-std() measurements for each subject and activity from the
+        merged train and test data sets.
+
+        Value range: [-1,1] The original measurements are already normalized to [-1,1] so the
+        averaging performed by run_analysis is guaranteed to be in [-1,1] too.
