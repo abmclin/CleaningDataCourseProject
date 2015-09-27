@@ -12,7 +12,7 @@ This script is provided without any warranty to the extent permitted by applicab
 
 ## Purpose:
 
-Merge and tidy up the dataset from UCI Machine Learning Repository located at <http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones>. A set of experiments performed using 30 volunteers using a Samsung Galaxy S II smartphone.
+Merge and tidy up the Human Activity Recognition Using Smartphones data set from UCI Machine Learning Repository located at <http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones>. A set of experiments performed using 30 volunteers using a Samsung Galaxy S II smartphone.
 
 Each person performed 6 activities, WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING. Each activity was measured (by the Samsung smartphone) at a rate of 50Hz.
 
@@ -40,7 +40,7 @@ The dataset directory has a certain directory hierarchy which run_analysis.R is 
 
 ## How to Run:
 
-You can run the script in two ways. Invoke R on the command-line then execute <b>source("run_analysis.R")</b> or invoke <b>R --vanilla < run_analysis.R</b> on the command-line.
+You can run the script in two ways. Invoke <b>R</b> on the command-line then execute <b>source("run_analysis.R")</b> or invoke <b>R --vanilla < run_analysis.R</b> on the command-line.
 
 It will generate a text file called run_analysis_tidydataset which contains the subject, activity identifiers, and the averages of the measured mean and standard deviation values.
 
