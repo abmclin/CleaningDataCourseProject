@@ -32,9 +32,11 @@ Finally, the script will average all the extracted means and standard deviation 
 
 ## Requirements:
 
-The experimental dataset must be available as a directory labeled UCI HAR Dataset in the same working directory run_analysis.R script is located in.
+The experimental dataset must be available as a directory labeled UCI HAR Dataset in the same working directory run_analysis.R script is located in. You can download the dataset as a zip file via <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip>
 
-The UCI HAR Dataset directory has a certain directory hierarchy which run_analysis.R is already familiar with.
+Unzip the downloaded file and place the UCI HAR dataset directory into run_analysis.R's working directory.
+
+The dataset directory has a certain directory hierarchy which run_analysis.R is already familiar with.
 
 ## How to Run:
 
